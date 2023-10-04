@@ -14,40 +14,8 @@
     </style>
 </head>
 <body>
-    <label for="dateInput" style="font-size:50px;">Внеси датум (ден/месец/година)</label>
-    <p style="font-size:32px;">Мора да биде понеделник!</p>
-    <br></br>
-    <p style="font-size:24px;">P.S. Ова е за предметна настава во ДХД 2023 година, важи само за прво полугодие, проверува само од 25 септември па натаке</p>
-    <br></br>
-    <input style="height:32px;" type="text" id="dateInput" placeholder="пример, 02/10/2023">
-    <br></br>
-    <button style="height:32px;" onclick="checkDate()">Провери!</button>
-    <p id="result"></p>
 
-    <script>
-        function checkDate() {
-            var dateInput = document.getElementById("dateInput").value;
-            var parts = dateInput.split('/');
-            if (parts.length === 3) {
-                var day = parseInt(parts[0]);
-                var month = parseInt(parts[1]);
-                if (day === 25 && month === 9) {
-                    document.getElementById("result").innerHTML = "Прва смена!";
-                } else if (day === 16 || day === 23 || day === 13 || day === 20 || day === 11 || day === 18) {
-                    document.getElementById("result").innerHTML = "Прва смена!";
-                } else if (day === 2 || day === 9 || day === 30 || day === 6 || day === 27 || day === 4 || day === 25) {
-                    document.getElementById("result").innerHTML = "Втора смена!";
-                } else if (month > 12) {
-                    document.getElementById("result").innerHTML = "Зар има повеќе од 12 месеци во годината?";
-                } else if (day > 31) {
-                    document.getElementById("result").innerHTML = "Зар има повеќе од 31 ден во некој од месеците?";
-                } else {
-                    document.getElementById("result").innerHTML = "Брат, мора да биде понеделник, ти пишува горе, АМАН!!!";
-                }
-            } else {
-                document.getElementById("result").innerHTML = "Нешо не си напраил ко шо треба";
-            }
-        }
-    </script>
+<a href="smena.html">Проверка на смена</a>
+
 </body>
 </html>
