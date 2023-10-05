@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Од колку до колку сум во школо</title>
     <style>
-        /* centrira */
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+      /* centrira */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="imageSource2">
-        <label for="password" style="font-size: 24px;">Внесете лозинка:</label>
-        <input style="height: 32px;" type="password" id="password" placeholder="Внесете лозинка">
-        <button style="height: 32px;" onclick="imageSource3()">Внеси лозинка</button>
+      <label for="password" style="font-size: 24px;">Внесете лозинка:</label>
+      <input style="height: 32px;" type="password" id="password" placeholder="Внесете лозинка">
+      <button style="height: 32px;" onclick="imageSource3()">Внеси лозинка</button>
     </div>
-
+    <div id="content" style="display: none;">
+      <label for="dateInput" style="font-size: 50px;">Внеси датум (ден/месец/година)</label>
+      <br></br>
+      <input style="height: 32px;" type="text" id="dateInput" placeholder="пример, 02/10/2023">
+      <br></br>
+      <button style="height: 32px;" onclick="checkDate()">Провери!</button>
+      <p id="result"></p>
+      <br></br>
+      <p style="font-size: 24px;">Важи само за прво полугодие.</p>
+    </div>
     <div id="content" style="display: none;">
         <label for="dateInput" style="font-size: 50px;">Внеси датум (ден/месец/година)</label>
         <br></br>
@@ -31,91 +41,49 @@
         <br></br>
         <p style="font-size: 24px;">Важи само за прво полугодие.</p>
     </div>
-
     <script>
         var imageSource = "bWFjaW5qYQ==";
-
         function imageSource3() {
-            var imageSource4 = document.getElementById("password").value;
-            var imageSource5 = atob(imageSource);
-            
-            if (imageSource4 === imageSource5) {
+        var imageSource4 = document.getElementById("password").value;
+        var imageSource5 = atob(imageSource);
+        if (imageSource4 === imageSource5) {
                 document.getElementById("imageSource2").style.display = "none";
                 document.getElementById("content").style.display = "block";
-            } else {
+        } else {
                 alert("Невалидна лозинка.");
-            }
         }
-
+}
         function checkDate() {
-            var dateInput = document.getElementById("dateInput").value;
-            var parts = dateInput.split('/');
-            if (parts.length === 3) {
+        var dateInput = document.getElementById("dateInput").value;
+        var parts = dateInput.split('/');
+        if (parts.length === 3) {
                 var day = parseInt(parts[0]);
                 var month = parseInt(parts[1]);
                 if (day === 19 && month === 10 || day === 26 && month === 10 || day === 16 && month === 11 || day === 23 && month === 11 || day === 14 && month === 12 || day === 21 && month === 12) {
-                    document.getElementById("result").innerHTML = "07:30-08:55";
-} 
-else if (day === 16 && month === 10 || day === 23 && month === 10 || day === 13 && month === 11 || day === 20 && month === 11 || day === 11 && month === 12 || day === 18 && month === 12)
-{
-document.getElementById("result").innerHTML = "07:30-12:55";
+                        document.getElementById("result").innerHTML = "07:30-08:55";
+                } else if (day === 16 && month === 10 || day === 23 && month === 10 || day === 13 && month === 11 || day === 20 && month === 11 || day === 11 && month === 12 || day === 18 && month === 12) {
+                        document.getElementById("result").innerHTML = "07:30-12:55";
+                } else if (day === 17 && month === 10 || day === 24 && month === 10 || day === 14 && month === 11 || day === 21 && month === 11 || day === 12 && month === 12 || day === 19 && month === 12) {
+                        document.getElementById("result").innerHTML = "10:45-12:55";
+                } else if (day === 5 && month === 10 || day === 12 && month === 10 || day === 2 && month === 11 || day === 9 && month === 11 || day === 30 && month === 11 || day === 7 && month === 12 || day === 28 && month === 12) {
+                        document.getElementById("result").innerHTML = "13:00-14:25";
+                } else if (day === 20 && month === 10 || day === 27 && month === 10 || day === 17 && month === 11 || day === 24 && month === 11 || day === 15 && month === 12 || day === 22 && month === 12) {
+                        document.getElementById("result").innerHTML = "13:00-17:40";
+                } else if (day === 2 && month === 10 || day === 9 && month === 10 || day === 30 && month === 10 || day === 6 && month === 11 || day === 27 && month === 11 || day === 4 && month === 12 || day === 25 && month === 12) {
+                        document.getElementById("result").innerHTML = "13:00-18:25";
+                } else if (day === 18 && month === 10 || day === 25 && month === 10 || day === 15 && month === 11 || day === 22 && month === 11 || day === 13 && month === 12 || day === 20 && month === 12) {
+                        document.getElementById("result").innerHTML = "14:45-16:10";
+                } else if (day === 3 && month === 10 || day === 10 && month === 10 || day === 31 && month === 10 || day === 7 && month === 11 || day === 28 && month === 11 || day === 5 && month === 12 || day === 26 && month === 12) {
+                        document.getElementById("result").innerHTML = "16:15-18:25 + приемен";
+                } else if (day === 6 && month === 10 || day === 13 && month === 10 || day === 3 && month === 11 || day === 10 && month === 11 || day === 1 && month === 12 || day === 8 && month === 12 || day === 29 && month === 12) {
+                        document.getElementById("result").innerHTML = "7:30-12:10";
+                } else if (day === 4 && month === 10 || day === 11 && month === 10 || day === 1 && month === 11 || day === 8 && month === 11 || day === 29 && month === 11 || day === 6 && month === 12 || day === 27 && month === 12) {
+                        document.getElementById("result").innerHTML = "9:15-10:40";
+                } else if (day === 7 && month === 10 || day === 8 && month === 10 || day === 14 && month === 10 || day === 15 && month === 10 || day === 21 && month === 10 || day === 22 && month === 10 || day === 28 && month === 10 || day === 29 && month === 10 || day === 4 && month === 11 || day === 5 && month === 11 || day === 11 && month === 11 || day === 12 && month === 11 || day === 18 && month === 11 || day === 19 && month === 11 || day === 25 && month === 11 || day === 26 && month === 11 || day === 2 && month === 12 || day === 3 && month === 12 || day === 9 && month === 12 || day === 10 && month === 12 || day === 16 && month === 12 || day === 17 && month === 12 || day === 23 && month === 12 || day === 24 && month === 12 || day === 30 && month === 12 || day === 31 && month === 12) {
+                        document.getElementById("result").innerHTML = "На овој датум е викенд ...";
+                }
+        }
 }
-
-else if (day === 17 && month === 10 || day === 24 && month === 10 || day === 14 && month === 11 || day === 21 && month === 11 || day === 12 && month === 12 || day === 19 && month === 12)
-{
-document.getElementById("result").innerHTML = "10:45-12:55";
-}
-
-else if (day === 5 && month === 10 || day === 12 && month === 10 || day === 2 && month === 11 || day === 9 && month === 11 || day === 30 && month === 11 || day === 7 && month === 12 || day === 28 && month === 12)
-
-{
-document.getElementById("result").innerHTML = "13:00-14:25";
-}
-
-else if (day === 20 && month === 10 || day === 27 && month === 10 || day === 17 && month === 11 || day === 24 && month === 11 || day === 15 && month === 12 || day === 22 && month === 12)
-
-{
-document.getElementById("result").innerHTML = "13:00-17:40";
-}
-
-else if (day === 2 && month === 10 || day === 9 && month === 10 || day === 30 && month === 10 || day === 6 && month === 11 || day === 27 && month === 11 || day === 4 && month === 12 || day === 25 && month === 12)
-
-{
-document.getElementById("result").innerHTML = "13:00-18:25";
-}
-
-else if (day === 18 && month === 10 || day === 25 && month === 10 || day === 15 && month === 11 || day === 22 && month === 11 || day === 13 && month === 12 || day === 20 && month === 12)
-
-{
-document.getElementById("result").innerHTML = "14:45-16:10";
-}
-
-else if (day === 3 && month === 10 || day === 10 && month === 10 || day === 31 && month === 10 || day === 7 && month === 11 || day === 28 && month === 11 || day === 5 && month === 12 || day === 26 && month === 12)
-
-{
-document.getElementById("result").innerHTML = "16:15-18:25 + приемен";
-}
-
-else if (day === 6 && month === 10 || day === 13 && month === 10 || day === 3 && month === 11 || day === 10 && month === 11 || day === 1 && month === 12 || day === 8 && month === 12 || day === 29 && month === 12)
-
-{
-document.getElementById("result").innerHTML = "7:30-12:10";
-}
-
-else if (day === 4 && month === 10 || day === 11 && month === 10 || day === 1 && month === 11 || day === 8 && month === 11 || day === 29 && month === 11 || day === 6 && month === 12 || day === 27 && month === 12)
-
-{
-document.getElementById("result").innerHTML = "9:15-10:40";
-}
-
-else if (day === 7 && month === 10 || day === 8 && month === 10 || day === 14 && month === 10 || day === 15 && month === 10 || day === 21 && month === 10 || day === 22 && month === 10 || day === 28 && month === 10 || day === 29 && month === 10 || day === 4 && month === 11 || day === 5 && month === 11 || day === 11 && month === 11 || day === 12 && month === 11 || day === 18 && month === 11 || day === 19 && month === 11 || day === 25 && month === 11 || day === 26 && month === 11 || day === 2 && month === 12 || day === 3 && month === 12 || day === 9 && month === 12 || day === 10 && month === 12 || day === 16 && month === 12 || day === 17 && month === 12 || day === 23 && month === 12 || day === 24 && month === 12 || day === 30 && month === 12 || day === 31 && month === 12)
-
-{
-document.getElementById("result").innerHTML = "На овој датум е викенд ...";
-}
-}
-}
-
     </script>
 </body>
 </html>
