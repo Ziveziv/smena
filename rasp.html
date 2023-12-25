@@ -36,7 +36,9 @@
         <br></br>
         <input style="height: 32px;" type="text" id="dateInput" placeholder="пример, 02/10/2023">
         <br></br>
-        <button style="height: 32px;" onclick="checkDate()">Провери!</button>
+        <form onsubmit="checkDate(); return false;">
+           <button style="height: 32px;" type="submit">Провери!</button>
+        </form>
         <p id="result"></p>
         <br></br>
         <p style="font-size: 24px;">Важи само за прво полугодие.</p>
