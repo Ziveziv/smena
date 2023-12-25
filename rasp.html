@@ -17,9 +17,11 @@
   </head>
   <body>
     <div id="imageSource2">
-      <label for="password" style="font-size: 24px;">Внесете лозинка:</label>
-      <input style="height: 32px;" type="password" id="password" placeholder="Внесете лозинка">
-      <button style="height: 32px;" onclick="imageSource3()">Внеси лозинка</button>
+      <form onsubmit="imageSource3(); return false;">
+        <label for="password" style="font-size: 24px;">Внесете лозинка:</label>
+        <input style="height: 32px;" type="password" id="password" placeholder="Внесете лозинка">
+        <button style="height: 32px;" type="submit">Внеси лозинка</button>
+      </form>
     </div>
     <div id="content" style="display: none;">
       <label for="dateInput" style="font-size: 50px;">Внеси датум (ден/месец/година)</label>
@@ -36,9 +38,7 @@
         <br></br>
         <input style="height: 32px;" type="text" id="dateInput" placeholder="пример, 02/10/2023">
         <br></br>
-        <form onsubmit="checkDate(); return false;">
-           <button style="height: 32px;" type="submit">Провери!</button>
-        </form>
+        <button style="height: 32px;" onclick="checkDate()">Провери!</button>
         <p id="result"></p>
         <br></br>
         <p style="font-size: 24px;">Важи само за прво полугодие.</p>
