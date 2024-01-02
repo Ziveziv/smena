@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка на смена</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <label for="dateInput" style="font-size:50px;">Внеси датум (ден/месец/година)</label>
+    <p style="font-size:32px;">Мора да биде понеделник!</p>
+    <br></br>
+    <input style="height:32px;" type="text" id="dateInput" placeholder="пример, 02/10/2023">
+    <br></br>
+    <button style="height:32px;" onclick="checkDate()">Провери!</button>
+    <p id="result"></p>
+    <br></br>
+    <p style="font-size:24px;">P.S. Ова е за предметна настава во ДХД 2023 година.</p> 
+    <br></br>
+    <p style="font-size:24px;">Важи само за второ полугодие.</p>
+
+    <script>
+        function checkDate() {
+            var dateInput = document.getElementById("dateInput").value;
+            var parts = dateInput.split('/');
+            if (parts.length === 3) {
+                var day = parseInt(parts[0]);
+                var month = parseInt(parts[1]);
+                if (day === 1&& month === 2 || day === 8&& month === 2 || day === 29&& month === 2 || day === 7&& month === 3 || day === 28&& month === 3 || day === 4&& month === 4 || day === 25&& month === 4 || day === 2&& month === 5 || day === 23&& month === 5 || day === 30&& month === 5) {
+                    document.getElementById("result").innerHTML = "Прва смена!";
+                } else if (day === 30&& month === 1 || day === 6&& month === 2 || day === 27&& month === 2 || day === 5&& month === 3 || day === 26&& month === 3 || day === 2&& month === 4 || day === 23&& month === 4 || day === 30&& month === 4 || day === 21&& month === 5 || day === 28&& month === 5) {
+                    document.getElementById("result").innerHTML = "Втора смена!";
+                } else if {
+                    document.getElementById("result").innerHTML = "Втора смена!";
+            }
+        }
+    </script>
+</body>
+</html>
