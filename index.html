@@ -14,8 +14,27 @@
     </style>
 </head>
 <body>
+    <style>
+        /* Define the default styles for the link */
+        .rounded-link {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            background-color: orange;
+            transition: background-color 0.3s, color 0.3s, outline 0.3s; /* Smooth transition for color changes */
+            outline: none; /* Initially, no outline */
+        }
 
-<a href="smena.html"><p style="font-size:32px;">Проверка на смена! (прво полугодие)</p></a>
+        /* Change styles on hover */
+        .rounded-link:hover {
+            background-color: white;
+            color: orange;
+            outline: 2px solid orange; /* Add an orange outline on hover */
+        }
+    </style>
+    <a href="smena.html" class="rounded-link">Прво полугодие</a>
     <br></br>
     <br></br>
 <a href="vtoropolugodieBASIC.html"><p style="font-size:32px;">Проверка на смена! (второ полугодие)</p></a>
