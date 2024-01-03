@@ -2,8 +2,11 @@
 <html>
 <head>
     <title>Проверка на смена</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        html, body {
+        html, body 
+        {
             height: 100%;
             margin: 0;
             display: flex;
@@ -11,11 +14,6 @@
             justify-content: center;
             align-items: center;
         }
-    </style>
-</head>
-<body>
-    <style>
-        /* Define the default styles for the link */
         .rounded-link {
             display: inline-flex; /* Use inline-flex to apply flex properties */
             align-items: center;
@@ -31,28 +29,31 @@
             width: 150px; /* Set a specific width for all links */
             height: 40px;
         }
-
-        /* Change styles on hover */
         .rounded-link:hover {
             background-color: white;
             color: orange;
             outline: 2px solid orange; /* Add an orange outline on hover */
         }
+    /* Media query for smaller screens (adjust as needed) */
+        @media only screen and (max-width: 600px) {
+            .rounded-link {
+                width: 80%; /* Adjust the width for smaller screens */
+            }
+        }
     </style>
-    <p style="font-size:24px;">Проверка на смена!</p></a>
-    <br></br>
-    <a href="smena.html" class="rounded-link">I ПОЛУГОДИЕ</a>
-    <br></br>
-    <a href="vtoropolugodieBASIC.html" class="rounded-link">II ПОЛУГОДИЕ</a>
-    <br></br>
-    <img src="larry.gif">
-    <br></br>
-    <p style="font-size:24px;">До кога сум во школо?</p></a>
-    <br></br>
-    <a href="rasp.html" class="rounded-link">I ПОЛУГОДИЕ</a>
-    <br></br>
-    <a href="vtoropolugodie.html" class="rounded-link">II ПОЛУГОДИЕ</a>
-    <br></br>
-    
-</body>
+    <body>
+        <p style="font-size:24px;">Проверка на смена!</p></a>
+            <br></br>
+        <a href="smena.html" class="rounded-link">I ПОЛУГОДИЕ</a>
+            <br></br>
+        <a href="vtoropolugodieBASIC.html" class="rounded-link">II ПОЛУГОДИЕ</a>
+            <br></br>
+        <img src="larry.gif">
+            <br></br>
+        <p style="font-size:24px;">До кога сум во школо?</p></a>
+            <br></br>
+        <a href="rasp.html" class="rounded-link">I ПОЛУГОДИЕ</a>
+            <br></br>
+        <a href="vtoropolugodie.html" class="rounded-link">II ПОЛУГОДИЕ</a>
+    </body>
 </html>
