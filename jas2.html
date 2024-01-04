@@ -46,6 +46,11 @@
                 cursor: pointer;
                }
     </style>
+    <audio id="myAudio">
+    <source src="t.wav" type="audio/wav">
+    <!-- Add additional source elements for other audio formats if needed -->
+    Your browser does not support the audio tag.
+    </audio>
 </head>
 <body>
     <div id="imageSource2">
@@ -88,6 +93,11 @@
                     alert("Невалидна лозинка.");
                 }
             }
+        function playSound() 
+        {
+          var audio = document.getElementById("myAudio");
+          audio.play();
+        }
         function checkDate() {
         var dateInput = document.getElementById("dateInput").value;
         var parts = dateInput.split('/');
@@ -119,6 +129,7 @@
                         document.getElementById("result").innerHTML = "На овој датум е викенд ...";
                 }
         }
+        playSound();  
 }
     </script>
 </body>
