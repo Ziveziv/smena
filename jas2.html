@@ -2,35 +2,43 @@
 <html>
   <head>
     <title>Од колку до колку сум во школо</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      /* centrira */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+      html, body 
+	    {
+        	height: 100%;
+        	margin: 0;
+        	display: flex;
+        	flex-direction: column;
+        	justify-content: center;
+        	align-items: center;
+        }
     </style>
   </head>
   <body>
     <div id="imageSource2">
       <form onsubmit="imageSource3(); return false;">
-        <label for="password" style="font-size: 24px;">Внесете лозинка:</label>
-        <input style="height: 32px;" type="password" id="password" placeholder="Внесете лозинка">
-        <button style="height: 32px;" type="submit">Внеси лозинка</button>
+        <p label for="password" style="font-size: 24px; margin: 10px;">Внесете лозинка:</label></p>
+        <input style="margin: 10px;height: 40px; width: 180px; align-items: center; justify-content: center; padding: 10px 20px;" type="password" id="password" placeholder="">
+        <br>
+        <button style="height: 32px; display: inline-flex; /* Use inline-flex to apply flex properties */
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            background-color: orange;
+            outline: none; /* Initially, no outline */
+            margin: 10px; /* Add margin between the links */
+            width: 180px; /* Set a specific width for all links */
+            height: 40px;" type="submit">ВЛЕЗ</button>
       </form>
     </div>
     <div id="content" style="display: none;">
       <label for="dateInput" style="font-size: 50px;">Внеси датум (ден/месец/година)</label>
-      <br></br>
       <input style="height: 32px;" type="text" id="dateInput" placeholder="пример, 02/10/2024">
-      <br></br>
       <button style="height: 32px;" onclick="checkDate()">Провери!</button>
       <p id="result"></p>
-      <br></br>
       <p style="font-size: 24px;">Важи само за второ полугодие.</p>
     </div>
     <div id="content" style="display: none;">
@@ -45,20 +53,25 @@
     </div>
     <script>
         var imageSource = "bWFjaW5qYQ==";
-        function imageSource3() {
-        var imageSource4 = document.getElementById("password").value;
-        var imageSource5 = atob(imageSource);
-        if (imageSource4 === imageSource5) {
-                document.getElementById("imageSource2").style.display = "none";
-                document.getElementById("content").style.display = "block";
-        } else {
-                alert("Невалидна лозинка.");
-        }
-}
+        function imageSource3() 
+            {
+                var imageSource4 = document.getElementById("password").value;
+                var imageSource5 = atob(imageSource);
+                if (imageSource4 === imageSource5) 
+                {
+                    document.getElementById("imageSource2").style.display = "none";
+                    document.getElementById("content").style.display = "block";
+                } 
+                else 
+                {
+                    alert("Невалидна лозинка.");
+                }
+            }
         function checkDate() {
         var dateInput = document.getElementById("dateInput").value;
         var parts = dateInput.split('/');
-        if (parts.length === 3) {
+        if (parts.length === 3) 
+            {
                 var day = parseInt(parts[0]);
                 var month = parseInt(parts[1]);
                 if (day === 1 && month === 2 || day === 8 && month === 2 || day === 29 && month === 2 || day === 7 && month === 3 || day === 28 && month === 3 || day === 4 && month === 4 || day === 25 && month === 4 || day === 2 && month === 5 || day === 23 && month === 5 || day === 30 && month === 5) {
