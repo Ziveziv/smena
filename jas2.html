@@ -95,7 +95,12 @@
             {
                 var day = parseInt(parts[0]);
                 var month = parseInt(parts[1]);
-                if (day === 1 && month === 2 || day === 8 && month === 2 || day === 29 && month === 2 || day === 7 && month === 3 || day === 28 && month === 3 || day === 4 && month === 4 || day === 25 && month === 4 || day === 2 && month === 5 || day === 23 && month === 5 || day === 30 && month === 5) {
+                var year = parseInt(parts[2]);
+                if (year != 2024)
+                {
+                  document.getElementById("result").innerHTML = "Годината мора да биде 2024";
+                }
+                  else if (day === 1 && month === 2 || day === 8 && month === 2 || day === 29 && month === 2 || day === 7 && month === 3 || day === 28 && month === 3 || day === 4 && month === 4 || day === 25 && month === 4 || day === 2 && month === 5 || day === 23 && month === 5 || day === 30 && month === 5) {
                         document.getElementById("result").innerHTML = "07:30-08:55";
                 } else if (day === 29 && month === 1 || day === 5 && month === 2 || day === 26 && month === 2 || day === 4 && month === 3 || day === 25 && month === 3 || day === 1 && month === 4 || day === 22 && month === 4 || day === 29 && month === 4 || day === 20 && month === 5 || day === 27 && month === 5) {
                         document.getElementById("result").innerHTML = "07:30-12:55";
