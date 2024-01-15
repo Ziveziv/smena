@@ -62,12 +62,9 @@
       <input style="height: 32px;" type="text" id="dateInput" placeholder="пример: 29/1/2024">
       <button style="height: 32px;" onclick="checkDate()">Провери!</button>
       <p id="result"></p>
+      <label for="dateInput" style="font-size: 24px;">Ова е за предметна настава во ДХД 2023-2024 година.</label>
+      <label for="dateInput" style="font-size: 24px;">Важи само за второ полугодие.</label>
     </div>
-    <br></br>
-    <p style="font-size:18px; color:white">Ова е за предметна настава во ДХД 2023-2024 година.</p> 
-    <br></br>
-    <p style="font-size:28px; color:white">Важи само за второ полугодие.</p>
-
     <script>
         function checkDate() {
             var dateInput = document.getElementById("dateInput").value;
