@@ -2,8 +2,11 @@
 <html>
 <head>
     <title>Проверка на смена</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        html, body {
+        html, body 
+        {
             height: 100%;
             margin: 0;
             display: flex;
@@ -11,16 +14,48 @@
             justify-content: center;
             align-items: center;
         }
+        label 
+          {
+            font-size: 24px;
+            margin: 10px;
+            display: block; /* Set display to block for stacking */
+            color: white;
+          }
+        #result {
+                font-size: 24px;
+                margin: 10px;
+                display: block;
+                text-align: center;
+                color: white;
+                }
+        input, button 
+            {
+              height: 25px;
+              margin: 10px;
+              box-sizing: border-box; /* Include padding and border in the total width */
+            }
+        input 
+              {
+                width: calc(100% - 20px); /* Subtract the total margin (10px + 10px) */
+              }
+        button {
+                width: calc(100% - 20px); /* Subtract the total margin (10px + 10px) */
+                color: white;
+                text-decoration: none;
+                background-color: orange;
+                outline: none;
+                border: none;
+                cursor: pointer;
+               }
     </style>
 </head>
 <body>
-    <label for="dateInput" style="font-size:50px;">Внеси датум (ден/месец/година)</label>
-    <p style="font-size:32px;">Мора да биде понеделник!</p>
-    <br></br>
-    <input style="height:32px;" type="text" id="dateInput" placeholder="пример, 22/01/2024">
-    <br></br>
-    <button style="height:32px;" onclick="checkDate()">Провери!</button>
-    <p id="result"></p>
+    <div id="content" style="display: none;">
+      <label for="dateInput" style="font-size: 24px;">Внеси датум</label>
+      <input style="height: 32px;" type="text" id="dateInput" placeholder="пример: 29/1/2024">
+      <button style="height: 32px;" onclick="checkDate()">Провери!</button>
+      <p id="result"></p>
+    </div>
     <br></br>
     <p style="font-size:24px;">P.S. Ова е за предметна настава во ДХД 2023-2024 година.</p> 
     <br></br>
@@ -43,5 +78,14 @@
         }
     }
     </script>
+    <style>
+  body {
+  /*background-color: #e6e6e6;  Replace with your preferred color code */
+  background-image: url('gradient.png'); /* Replace with the path to your image */
+  background-size: cover;  Adjust to 'contain' or other options if needed */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
+  </style>
 </body>
 </html>
