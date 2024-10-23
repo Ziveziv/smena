@@ -33,11 +33,11 @@
             if (parts.length === 3) {
                 var day = parseInt(parts[0]);
                 var month = parseInt(parts[1]);
-                if (day === 25 && month === 9) {
+                if (day === 23 && month === 9 || day === 9 && month === 12) {
                     document.getElementById("result").innerHTML = "Прва смена!";
-                } else if (day === 16 || day === 23 || day === 13 || day === 20 || day === 11 || day === 18) {
+                } else if (day === 16 || day === 14 || day === 21 || day === 11 || day === 18) {
                     document.getElementById("result").innerHTML = "Прва смена!";
-                } else if (day === 2 || day === 9 || day === 30 || day === 6 || day === 27 || day === 4 || day === 25) {
+                } else if (day === 2 || day === 9 || day === 30 || day === 7 || day === 28 || day === 4 || day === 25 || day === 23) {
                     document.getElementById("result").innerHTML = "Втора смена!";
                 } else if (month > 12) {
                     document.getElementById("result").innerHTML = "Зар има повеќе од 12 месеци во годината?";
