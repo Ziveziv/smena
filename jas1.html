@@ -97,8 +97,17 @@
                 var day = parseInt(parts[0]);
                 var month = parseInt(parts[1]);
                 var year = parseInt(parts[2]);
+
+                if (year != 2024)
+                {document.getElementById("result").innerHTML = "Годината мора да биде 2024";}
+				
+				        if (day < 1 || day > 31) 
+				        {document.getElementById("result").innerHTML = "Нешто си утнал со денот";}
+				
+				        if (month < 1 || month > 12) 
+				        {document.getElementById("result").innerHTML = "Нешто си утнал со месецот";}
           
-                if (day === 5 && month === 9 || day === 12 && month === 9 || day === 3 && month === 10 || day === 10 && month === 10 || day === 31 && month === 10 || day === 7 && month === 11 || day === 28 && month === 11 || day === 5 && month === 12 || day === 26 && month === 12) {
+                  else if (day === 5 && month === 9 || day === 12 && month === 9 || day === 3 && month === 10 || day === 10 && month === 10 || day === 31 && month === 10 || day === 7 && month === 11 || day === 28 && month === 11 || day === 5 && month === 12 || day === 26 && month === 12) {
                         document.getElementById("result").innerHTML = "07:30 - 11:25";
                 } else if (day === 16 && month === 9 || day === 23 && month === 9 || day === 14 && month === 10 || day === 21 && month === 10 || day === 11 && month === 11 || day === 18 && month === 11 || day === 9 && month === 12 || day === 16 && month === 12) {
                         document.getElementById("result").innerHTML = "07:30 - 12:10";
