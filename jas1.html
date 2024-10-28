@@ -2,59 +2,94 @@
 <html>
   <head>
     <title>Од колку до колку сум во школо</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      /* centrira */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+        html, body 
+        {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        label 
+          {
+            font-size: 24px;
+            margin: 10px;
+            display: block; /* Set display to block for stacking */
+            color: white;
+          }
+        #result {
+                font-size: 24px;
+                margin: 10px;
+                display: block;
+                text-align: center;
+                color: white;
+                }
+        input, button 
+            {
+              height: 25px;
+              margin: 10px;
+              box-sizing: border-box; /* Include padding and border in the total width */
+            }
+        input 
+              {
+                width: calc(100% - 20px); /* Subtract the total margin (10px + 10px) */
+              }
+        button {
+                width: calc(100% - 20px); /* Subtract the total margin (10px + 10px) */
+                color: white;
+                text-decoration: none;
+                background-color: orange;
+                outline: none;
+                border: none;
+                cursor: pointer;
+               }
     </style>
-  </head>
-  <body>
+    <audio id="myAudio">
+    <source src="t.wav" type="audio/wav">
+    <!-- Add additional source elements for other audio formats if needed -->
+    Your browser does not support the audio tag.
+    </audio>
+</head>
+<body>
     <div id="imageSource2">
-      <form onsubmit="imageSource3(); return false;">
-        <label for="password" style="font-size: 24px;">Внесете лозинка:</label>
-        <input style="height: 32px;" type="password" id="password" placeholder="Внесете лозинка">
-        <button style="height: 32px;" type="submit">Внеси лозинка</button>
-      </form>
+        <form onsubmit="imageSource3(); return false;">
+            <label for="password">Внесете лозинка:</label>
+            <input type="password" id="password" placeholder="">
+            <br>
+            <button type="submit">ВЛЕЗ</button>
+        </form>
     </div>
     <div id="content" style="display: none;">
-      <label for="dateInput" style="font-size: 50px;">Внеси датум (ден/месец/година)</label>
-      <br></br>
-      <input style="height: 32px;" type="text" id="dateInput" placeholder="пример, 21/10/2024">
-      <br></br>
+      <label for="dateInput" style="font-size: 24px;">Внеси датум</label>
+      <input style="height: 32px;" type="text" id="dateInput" placeholder="пример: 14/2/2024">
       <button style="height: 32px;" onclick="checkDate()">Провери!</button>
       <p id="result"></p>
-      <br></br>
-      <p style="font-size: 24px;">Важи само за прво полугодие 2024.</p>
-    </div>
-    <div id="content" style="display: none;">
-        <label for="dateInput" style="font-size: 50px;">Внеси датум (ден/месец/година)</label>
-        <br></br>
-        <input style="height: 32px;" type="text" id="dateInput" placeholder="пример, 02/10/2023">
-        <br></br>
-        <button style="height: 32px;" onclick="checkDate()">Провери!</button>
-        <p id="result"></p>
-        <br></br>
-        <p style="font-size: 24px;">Важи само за прво полугодие.</p>
     </div>
     <script>
         var imageSource = "bWFjaW5qYQ==";
-        function imageSource3() {
-        var imageSource4 = document.getElementById("password").value;
-        var imageSource5 = atob(imageSource);
-        if (imageSource4 === imageSource5) {
-                document.getElementById("imageSource2").style.display = "none";
-                document.getElementById("content").style.display = "block";
-        } else {
-                alert("Невалидна лозинка.");
+        function imageSource3() 
+            {
+                var imageSource4 = document.getElementById("password").value;
+                var imageSource5 = atob(imageSource);
+                if (imageSource4 === imageSource5) 
+                {
+                    document.getElementById("imageSource2").style.display = "none";
+                    document.getElementById("content").style.display = "block";
+                } 
+                else 
+                {
+                    alert("Невалидна лозинка.");
+                }
+            }
+        function playSound() 
+        {
+          var audio = document.getElementById("myAudio");
+          audio.play();
         }
-}
         function checkDate() {
         var dateInput = document.getElementById("dateInput").value;
         var parts = dateInput.split('/');
@@ -84,8 +119,19 @@
                 } else if (day === 6 && month === 9 || day === 13 && month === 9 || day === 4 && month === 10 || day === 11 && month === 10 || day === 1 && month === 11 || day === 8 && month === 11 || day === 29 && month === 11 || day === 6 && month === 12 || day === 27 && month === 12) {
                         document.getElementById("result").innerHTML = "15:00 - 16:25";
                 }
-        }
+          }
+playSound();  
 }
+        
     </script>
+  <style>
+  body {
+  /*background-color: #e6e6e6;  Replace with your preferred color code */
+  background-image: url('pineappleuniverse.png'); /* Replace with the path to your image */
+  background-size: cover;  Adjust to 'contain' or other options if needed */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
+  </style>
 </body>
 </html>
