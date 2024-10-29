@@ -98,14 +98,8 @@
                 var month = parseInt(parts[1]);
                 var year = parseInt(parts[2]);
 
-                if (year != 2024)
-                {document.getElementById("result").innerHTML = "Годината мора да биде 2024";}
-				
-				        if (day < 1 || day > 31) 
-				        {document.getElementById("result").innerHTML = "Нешто си утнал со денот";}
-				
-				        if (month < 1 || month > 12) 
-				        {document.getElementById("result").innerHTML = "Нешто си утнал со месецот";}
+                if (year != 2024 || day < 1 || day > 31 || month < 1 || month > 12 )
+                {document.getElementById("result").innerHTML = "Имаш утка во датумот. Пробај пак.";}
           
                   else if (day === 5 && month === 9 || day === 12 && month === 9 || day === 3 && month === 10 || day === 10 && month === 10 || day === 31 && month === 10 || day === 7 && month === 11 || day === 28 && month === 11 || day === 5 && month === 12 || day === 26 && month === 12) {
                         document.getElementById("result").innerHTML = "07:30 - 11:25";
